@@ -1,0 +1,297 @@
+---
+// Página principal del evento - Landing page con diseño del flyer
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="description" content="¡CELEBREMOS JUNTOS! Nuestro aniversario MIDAS - SAB 4 OCT con DJ GIAN" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<title>¡CELEBREMOS JUNTOS! - Aniversario MIDAS</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+	<main class="main-container">
+		<!-- Contenido principal del evento -->
+		<div class="event-content">
+
+
+			<!-- Contenido central -->
+			<div class="center-content">
+				<h1 class="main-title">¡CELEBREMOS<br>JUNTOS!</h1>
+				
+				<div class="subtitle-section">
+					<p class="anniversary-text">Nuestro aniversario</p>
+					<div class="midas-logo-center">
+						<img src="/src/assets/Logotipo.svg" alt="MIDAS Logo" class="midas-logo-main">
+					</div>
+				</div>
+
+				<div class="date-section">
+					<span class="date-text">SAB 4 OCT</span>
+				</div>
+
+				<button class="register-btn" id="register-button">
+					Regístrate aquí
+				</button>
+
+				<div class="info-section">
+					<p class="info-text">
+						Ingresa tu DNI, nombres y apellidos, número de<br>
+						WhatsApp y tu sede.
+					</p>
+				</div>
+			</div>
+
+			<!-- Artista invitado -->
+			<div class="artist-section">
+				<div class="artist-logo">
+					<img src="/src/assets/dj gian.png" alt="DJ GIAN" class="dj-logo">
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	body {
+		font-family: 'Inter', sans-serif;
+		background: url('/src/assets/fondo2.png') center/cover no-repeat;
+		min-height: 100vh;
+		overflow: hidden;
+		position: relative;
+	}
+
+	html {
+		overflow: hidden;
+	}
+
+	.main-container {
+		height: 100vh;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 2rem;
+	}
+
+	.event-content {
+		width: 100%;
+		max-width: 500px;
+		height: 100%;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		text-align: center;
+		color: white;
+	}
+
+
+
+	.center-content {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 2rem 0;
+	}
+
+	.main-title {
+		font-size: 3.5rem;
+		font-weight: 900;
+		line-height: 0.9;
+		margin-bottom: 1.5rem;
+		text-shadow: 0 4px 8px rgba(0,0,0,0.5);
+		letter-spacing: -0.02em;
+	}
+
+	.subtitle-section {
+		margin-bottom: 2rem;
+	}
+
+	.anniversary-text {
+		font-size: 1.2rem;
+		font-weight: 400;
+		margin-bottom: 0.5rem;
+		opacity: 0.9;
+	}
+
+	.midas-logo-center {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 1.5rem;
+	}
+
+	.midas-logo-main {
+		height: 120px;
+		width: auto;
+		filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+	}
+
+	.solutions-text {
+		font-size: 0.9rem;
+		font-weight: 600;
+		letter-spacing: 0.2em;
+		background: linear-gradient(45deg, #FFD700, #FFA500);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		margin-top: -0.5rem;
+	}
+
+	.date-section {
+		margin-bottom: 2rem;
+	}
+
+	.date-text {
+		font-size: 2.5rem;
+		font-weight: 900;
+		background: linear-gradient(45deg, #FFD700, #FFA500);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+		letter-spacing: 0.05em;
+	}
+
+	.register-btn {
+		background: linear-gradient(45deg, #FFD700, #FFA500);
+		color: #000;
+		border: none;
+		padding: 1rem 2.5rem;
+		border-radius: 50px;
+		font-size: 1.2rem;
+		font-weight: 700;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		margin-bottom: 1.5rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+	}
+
+	.register-btn:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 12px 35px rgba(255, 215, 0, 0.6);
+		background: linear-gradient(45deg, #FFA500, #FFD700);
+	}
+
+	.register-btn:active {
+		transform: translateY(-1px);
+	}
+
+	.info-section {
+		margin-bottom: 1rem;
+	}
+
+	.info-text {
+		font-size: 0.9rem;
+		font-weight: 400;
+		opacity: 0.9;
+		line-height: 1.4;
+	}
+
+	.artist-section {
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+
+	.artist-label {
+		font-size: 0.9rem;
+		font-weight: 500;
+		margin-bottom: 0.5rem;
+		opacity: 0.9;
+	}
+
+	.artist-logo {
+		display: flex;
+		justify-content: center;
+	}
+
+	.dj-logo {
+		height: 80px;
+		width: auto;
+	}
+
+	/* Responsive */
+	@media (max-width: 768px) {
+		.main-container {
+			padding: 1rem;
+		}
+
+		.main-title {
+			font-size: 2.8rem;
+		}
+
+		.midas-text {
+			font-size: 2.2rem;
+		}
+
+		.date-text {
+			font-size: 2rem;
+		}
+
+		.register-btn {
+			padding: 0.8rem 2rem;
+			font-size: 1rem;
+		}
+
+		.midas-logo {
+			height: 60px;
+		}
+
+		.midas-logo-main {
+			height: 90px;
+		}
+
+		.dj-logo {
+			height: 70px;
+		}
+
+		.info-text {
+			font-size: 0.8rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.main-title {
+			font-size: 2.2rem;
+		}
+
+		.midas-text {
+			font-size: 1.8rem;
+		}
+
+		.date-text {
+			font-size: 1.6rem;
+		}
+
+		.register-btn {
+			padding: 0.7rem 1.5rem;
+			font-size: 0.9rem;
+		}
+	}
+</style>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const registerButton = document.getElementById('register-button');
+		if (registerButton) {
+			registerButton.addEventListener('click', function() {
+				window.location.href = '/registro';
+			});
+		}
+	});
+</script>
