@@ -1,5 +1,8 @@
 ---
 // Esta es la página del formulario de registro (movida desde index.astro)
+import fondo2 from '../assets/fondo2.png';
+import logotipo from '../assets/Logotipo.svg';
+import djGian from '../assets/dj gian.png';
 ---
 
 <!DOCTYPE html>
@@ -12,9 +15,9 @@
 	<title>¡CELEBREMOS JUNTOS! - Aniversario MIDAS</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;909&display=swap" rel="stylesheet">
 </head>
-<body>
+<body style={`background-image: url(${fondo2.src})`}>
 	<main class="main-container">
 
 		<!-- Contenido principal del evento -->
@@ -22,10 +25,10 @@
 			<!-- Contenido central -->
 			<div class="center-content">
 				<div class="midas-logo-center">
-					<img src="/src/assets/Logotipo.svg" alt="MIDAS Logo" class="midas-logo-main">
+					<img src={logotipo.src} alt="MIDAS Logo" class="midas-logo-main">
 				</div>
 				<h1 class="main-title">¡CELEBREMOS JUNTOS!</h1>
-				<h2 class="reserva-title">Reserva aquí</h2>
+				<h2 class="reserva-title">REGISTRA TUS DATOS AQUÍ</h2>
 
 				<!-- Formulario simplificado -->
 				<form id="qr-form" class="qr-form">
@@ -66,7 +69,7 @@
 			<!-- Artista invitado -->
 			<div class="artist-section">
 				<div class="artist-logo">
-					<img src="/src/assets/dj gian.png" alt="DJ GIAN" class="dj-logo">
+					<img src={djGian.src} alt="DJ GIAN" class="dj-logo">
 				</div>
 			</div>
 		</div>
@@ -94,7 +97,9 @@
 
 	body {
 		font-family: 'Inter', sans-serif;
-		background: url('/src/assets/fondo2.png') center/cover no-repeat;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
 		min-height: 100vh;
 		color: white;
 		overflow-x: hidden;
@@ -158,11 +163,12 @@
 	}
 
 	.reserva-title {
-		font-size: 1.3rem;
-		font-weight: 700;
+		font-size: 1.5rem;
+		font-weight: 800;
 		color: #FFD700;
-		margin-bottom: 1rem;
+		margin-bottom: 1.2rem;
 		text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+		letter-spacing: 0.05em;
 	}
 
 	.qr-form {
@@ -389,8 +395,9 @@
 	}
 </style>
 
-<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
-<script>
+<script type="module">
+	import QRCode from 'qrcode';
+
 	document.addEventListener('DOMContentLoaded', function() {
 		const form = document.getElementById('qr-form');
 		const dniInput = document.getElementById('dni');
@@ -445,13 +452,23 @@
 				});
 
 				if (response.ok) {
-					const usuario = await response.json();
+					const result = await response.json();
 
-					// Llenar los campos con los datos del usuario
-					nombresInput.value = `${usuario.nombres} ${usuario.apellidos}`;
-					sedeInput.value = usuario.sede;
+					// El backend devuelve { status: "success", data: {...}, message: "..." }
+					if (result.status === 'success' && result.data) {
+						const usuario = result.data;
 
-					showSuccessMessage('Usuario encontrado en la base de datos');
+						// Llenar los campos con los datos del usuario
+						nombresInput.value = usuario.nombresCompletos || `${usuario.nombres} ${usuario.apellidos}`;
+						sedeInput.value = usuario.sede || '';
+
+						showSuccessMessage('Usuario encontrado en la base de datos');
+					} else {
+						// Usuario no encontrado
+						nombresInput.value = '';
+						sedeInput.value = '';
+						showErrorMessage(result.message || 'DNI no encontrado en la base de datos.');
+					}
 				} else {
 					// Usuario no encontrado
 					nombresInput.value = '';
@@ -526,7 +543,7 @@
 
 					// Generar código QR visual con los datos del backend
 					const qrData = result.data.qrData;
-					const qrDataURL = await window.QRCode.toDataURL(qrData, {
+					const qrDataURL = await QRCode.toDataURL(qrData, {
 						width: 300,
 						margin: 2,
 						color: {

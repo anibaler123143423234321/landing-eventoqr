@@ -1,5 +1,8 @@
 ---
 // Página principal del evento - Landing page con diseño del flyer
+import fondo2 from '../assets/fondo2.png';
+import logotipo from '../assets/Logotipo.svg';
+import djGian from '../assets/dj gian.png';
 ---
 
 <!DOCTYPE html>
@@ -14,7 +17,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body style={`background-image: url(${fondo2.src})`}>
 	<main class="main-container">
 		<!-- Contenido principal del evento -->
 		<div class="event-content">
@@ -27,7 +30,7 @@
 				<div class="subtitle-section">
 					<p class="anniversary-text">Nuestro aniversario</p>
 					<div class="midas-logo-center">
-						<img src="/src/assets/Logotipo.svg" alt="MIDAS Logo" class="midas-logo-main">
+						<img src={logotipo.src} alt="MIDAS Logo" class="midas-logo-main">
 					</div>
 				</div>
 
@@ -50,7 +53,7 @@
 			<!-- Artista invitado -->
 			<div class="artist-section">
 				<div class="artist-logo">
-					<img src="/src/assets/dj gian.png" alt="DJ GIAN" class="dj-logo">
+					<img src={djGian.src} alt="DJ GIAN" class="dj-logo">
 				</div>
 			</div>
 		</div>
@@ -66,7 +69,9 @@
 
 	body {
 		font-family: 'Inter', sans-serif;
-		background: url('/src/assets/fondo2.png') center/cover no-repeat;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
 		min-height: 100vh;
 		overflow: hidden;
 		position: relative;
@@ -122,10 +127,10 @@
 	}
 
 	.anniversary-text {
-		font-size: 1.2rem;
-		font-weight: 400;
+		font-size: 1.5rem;
+		font-weight: 500;
 		margin-bottom: 0.5rem;
-		opacity: 0.9;
+		opacity: 0.95;
 	}
 
 	.midas-logo-center {
