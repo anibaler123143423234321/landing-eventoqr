@@ -1,8 +1,5 @@
 ---
 // Esta es la página del formulario de registro (movida desde index.astro)
-import fondo2 from '../assets/fondo2.png';
-import logotipo from '../assets/Logotipo.svg';
-import djGian from '../assets/dj gian.png';
 ---
 
 <!DOCTYPE html>
@@ -17,7 +14,7 @@ import djGian from '../assets/dj gian.png';
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;909&display=swap" rel="stylesheet">
 </head>
-<body style={`background-image: url(${fondo2.src})`}>
+<body style="background-image: url('/fondo2.png')">
 	<main class="main-container">
 
 		<!-- Contenido principal del evento -->
@@ -25,7 +22,7 @@ import djGian from '../assets/dj gian.png';
 			<!-- Contenido central -->
 			<div class="center-content">
 				<div class="midas-logo-center">
-					<img id="midas-logo-source" src={logotipo.src} alt="MIDAS Logo" class="midas-logo-main">
+					<img id="midas-logo-source" src="/logotipo.svg" alt="MIDAS Logo" class="midas-logo-main">
 				</div>
 				<h1 class="main-title">¡CELEBREMOS JUNTOS!</h1>
 				<h2 class="reserva-title">REGISTRA TUS DATOS AQUÍ</h2>
@@ -69,7 +66,7 @@ import djGian from '../assets/dj gian.png';
 			<!-- Artista invitado -->
 			<div class="artist-section">
 				<div class="artist-logo">
-					<img src={djGian.src} alt="DJ GIAN" class="dj-logo">
+					<img src="/djGian.png" alt="DJ GIAN" class="dj-logo">
 				</div>
 			</div>
 		</div>

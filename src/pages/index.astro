@@ -1,8 +1,5 @@
 ---
 // Página principal del evento - Landing page con diseño del flyer
-import fondo2 from '../assets/fondo2.png';
-import logotipo from '../assets/Logotipo.svg';
-import djGian from '../assets/dj gian.png';
 ---
 
 <!DOCTYPE html>
@@ -17,21 +14,22 @@ import djGian from '../assets/dj gian.png';
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-<body style={`background-image: url(${fondo2.src})`}>
+<body style="background-color: #060f24;">
 	<main class="main-container">
 		<!-- Contenido principal del evento -->
 		<div class="event-content">
-
-
+			<div class="midas-logo-center">
+				<img src="/logotipo.png" alt="MIDAS Logo" class="midas-logo-main">
+			</div>
 			<!-- Contenido central -->
 			<div class="center-content">
-				<h1 class="main-title">¡CELEBREMOS<br>JUNTOS!</h1>
-				
+				<div class="main-title">
+					<img src="/celebramosALo.png" alt="celebramos a lo">
+					<img src="/grande.png" alt="grande">
+				</div>
+				 
 				<div class="subtitle-section">
 					<p class="anniversary-text">Nuestro aniversario</p>
-					<div class="midas-logo-center">
-						<img src={logotipo.src} alt="MIDAS Logo" class="midas-logo-main">
-					</div>
 				</div>
 
 				<div class="date-section">
@@ -53,7 +51,7 @@ import djGian from '../assets/dj gian.png';
 			<!-- Artista invitado -->
 			<div class="artist-section">
 				<div class="artist-logo">
-					<img src={djGian.src} alt="DJ GIAN" class="dj-logo">
+					<img src="/djGian.png" alt="DJ GIAN" class="dj-logo">
 				</div>
 			</div>
 		</div>
@@ -108,9 +106,8 @@ import djGian from '../assets/dj gian.png';
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
 		align-items: center;
-		padding: 2rem 0;
+		padding: 0.5rem 0;
 	}
 
 	.main-title {
@@ -140,7 +137,7 @@ import djGian from '../assets/dj gian.png';
 	}
 
 	.midas-logo-main {
-		height: 120px;
+		height: 50px;
 		width: auto;
 		filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
 	}
@@ -258,7 +255,8 @@ import djGian from '../assets/dj gian.png';
 		}
 
 		.midas-logo-main {
-			height: 90px;
+			height: 35px;
+			margin-top: 20px;
 		}
 
 		.dj-logo {
@@ -272,7 +270,8 @@ import djGian from '../assets/dj gian.png';
 
 	@media (max-width: 480px) {
 		.main-title {
-			font-size: 2.2rem;
+			width: 5px;
+			height: auto;
 		}
 
 		.midas-text {
