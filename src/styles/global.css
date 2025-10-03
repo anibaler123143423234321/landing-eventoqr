@@ -1,1 +1,18 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: "Made Outer Sans";
+  src: url("/fonts/made-outer-sans/MadeOuterSans-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Made Outer Sans";
+  src: url("/fonts/made-outer-sans/MadeOuterSans-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
