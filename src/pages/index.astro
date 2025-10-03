@@ -1,301 +1,220 @@
 ---
-// Página principal del evento - Landing page con diseño del flyer
+import Layout from "../layouts/Layout.astro";
 ---
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="UTF-8" />
-	<meta name="description" content="¡CELEBREMOS JUNTOS! Nuestro aniversario MIDAS - SAB 4 OCT con DJ GIAN" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	<title>¡CELEBREMOS JUNTOS! - Aniversario MIDAS</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-</head>
-<body style="background-color: #060f24;">
-	<main class="main-container">
-		<!-- Contenido principal del evento -->
-		<div class="event-content">
-			<div class="midas-logo-center">
-				<img src="/logotipo.png" alt="MIDAS Logo" class="midas-logo-main">
-			</div>
-			<!-- Contenido central -->
-			<div class="center-content">
-				<div class="main-title">
-					<img src="/celebramosALo.png" alt="celebramos a lo">
-					<img src="/grande.png" alt="grande">
-				</div>
-				 
-				<div class="subtitle-section">
-					<p class="anniversary-text">Nuestro aniversario</p>
-				</div>
+<Layout title="¡CELEBREMOS JUNTOS! - Aniversario MIDAS">
+  <main class="max-w-[600px] mx-auto px-6 py-10 relative z-10">
+    
+    <!-- Parlantes y efectos de luz -->
+    <div class="relative w-full max-w-[500px] mx-auto h-[380px] flex justify-center items-start">
+      
+      <!-- Logo MIDAS -->
+      <div class="absolute p-4 left-1/2 -translate-x-1/2 z-50 animate-fadeInDown">
+        <img src="/logotipo.png" alt="MIDAS Logo" class="h-[40px] w-auto">
+      </div>
+      
+      <!-- Parlantes -->
+      <img src="/parlante-izq.png" alt="Parlante izquierdo"
+     	class="absolute top-0 left-0 w-[100px] h-auto z-20 [clip-path:inset(0_0_34%_0)]">
+      <img src="/parlante-der.png" alt="Parlante derecho" 
+        class="absolute top-0 right-[0%] w-[100px] h-auto z-20 [clip-path:inset(0_0_34%_0)]">
 
-				<div class="date-section">
-					<span class="date-text">SAB 4 OCT</span>
-				</div>
+      <!-- Capas de luz -->
+      <div class="absolute inset-0 z-30">
+        <img src="/capa-izq.png" alt="Efecto luz izquierda" 
+             class="absolute -left-[24px] -top-[20px] w-[200px] h-auto opacity-75">
+        <img src="/capa-der.png" alt="Efecto luz derecha" 
+             class="absolute -right-[24px] -top-[20px] w-[200px] h-auto opacity-75">
+      </div>
+    </div>
 
-				<button class="register-btn" id="register-button">
-					Regístrate aquí
-				</button>
+    <!-- Título principal -->
+    <div class="text-center -mt-[260px] relative z-40 animate-fadeInUp">
+      <div>
+        <img src="/celebramosALo.png" alt="Celebramos a lo" 
+             class="max-w-[68%] mx-auto -mb-10">
+        <img src="/grande.png" alt="Grande" 
+             class="max-w-[97%] mx-auto -mt-12">
+      </div>
+      <p class="text-xl font-light -mt-12">
+        Un año más de logros,<br>amistad y diversión
+      </p>
+    </div>
 
-				<div class="info-section">
-					<p class="info-text">
-						Ingresa tu DNI, nombres y apellidos, número de<br>
-						WhatsApp y tu sede.
-					</p>
-				</div>
-			</div>
-
-			<!-- Artista invitado -->
-			<div class="artist-section">
-				<div class="artist-logo">
-					<img src="/djGian.png" alt="DJ GIAN" class="dj-logo">
-				</div>
-			</div>
+	<!-- Descripción del evento -->
+	 <div class="text-center mt-0 relative z-40 animate-fadeInUp">
+		<div>
+			<img src="/nuestros.png" alt="Nuestros" class="max-w-[62%] mx-auto">
+			<img src="/06.png" alt="6 Años" class="max-w-[100%] -mt-6 mx-auto">
+			<img src="/años.png" alt="Años" class="max-w-[60%] -mt-16 mx-auto">
 		</div>
-	</main>
-</body>
+	 </div>
 
-<style>
-	* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-	}
+	<!-- DJ invitado -->
+    <div class="text-center mb-8 p-5 bg-yellow-500/5 rounded-3xl border-2 border-yellow-500/30 animate-fadeInUp">
+      <p class="text-sm text-yellow-500 font-semibold tracking-widest mb-3">INVITADO ESPECIAL:</p>
+      <img src="/djGian.png" alt="DJ GIAN" 
+           class="h-[75px] w-auto mx-auto drop-shadow-[0_4px_15px_rgba(255,165,0,0.4)]">
+    </div>
 
-	body {
-		font-family: 'Inter', sans-serif;
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
-		min-height: 100vh;
-		overflow: hidden;
-		position: relative;
-	}
+    <!-- Información del evento -->
+    <div class="mb-8 animate-fadeInUp">
+      <div class="grid grid-cols-3 gap-3">
+        <!-- Fecha -->
+        <div class="rounded-2xl p-4 text-center transition-all">
+          <div>
+			<svg class="w-12 h-12 mx-auto mb-2" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff">
+				<g id="SVGRepo_iconCarrier"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-380.000000, -2799.000000)" fill="#ffffff"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M326,2657 L342,2657 L342,2645 L326,2645 L326,2657 Z M342,2641 L342,2639 L340,2639 L340,2641 L335,2641 L335,2639 L333,2639 L333,2641 L328,2641 L328,2639 L326,2639 L326,2641 L324,2641 L324,2659 L344,2659 L344,2641 L342,2641 Z" id="calendar-[#1194]"> </path> </g> </g> </g> </g>
+			</svg>
+		  </div>
+          <div class="text-[1.5rem] text-white font-extrabold -mb-3 leading-tight">FECHA</div>
+			<div class="text-[8rem] font-extrabold leading-none">04</div>
+			<div class="text-sm font-light -mt-3">OCTUBRE</div>
+        </div>
+        <!-- Hora -->
+        <div class="rounded-2xl p-2 text-center transition-all">
+          <div>
+			<svg class="w-16 h-16 mx-auto mb-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 7V12L14.5 13.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#ffffff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path> </g>
+			</svg>
+		  </div>
+          <div class="text-[1.5rem] text-white font-extrabold -mb-2 leading-tight">HORA</div>
+			<div class="text-[4.5rem] font-extrabold leading-none">12:00</div>
+			<div class="text-sm font-light -mt-2">MEDIODIA</div>
+        </div>
+        <!-- Vestimenta -->
+        <div class="rounded-2xl p-2 text-center transition-all">
+          <div>
+			<svg class="w-18 h-18 mx-auto -mb-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9.53589 6.90909C9.53589 5.85473 10.4868 5 11.6599 5C12.8329 5 13.7839 5.85473 13.7839 6.90909C13.7839 7.40532 13.6046 7.85733 13.2925 8.19682C12.6948 8.84706 11.8015 9.50197 11.8015 10.3455V10.6299M11.8015 10.6299C12.533 10.6214 13.2674 10.8246 13.8845 11.2406L21.317 16.2509C22.6234 17.1315 21.9305 19 20.2975 19H3.70254C2.08721 19 1.38322 17.1648 2.65531 16.27L9.751 11.2787C10.3534 10.855 11.076 10.6383 11.8015 10.6299Z" stroke="#ffffff" stroke-width="1" stroke-linecap="round"></path> </g>
+			</svg>
+		  </div>
+          <div class="text-[1.2rem] text-white font-extrabold -mb-3 leading-tight">CÓDIGO DE <br> VESTIMENTA</div>
+			<div class="text-[4rem] font-extrabold leading-none">CASUAL</div>
+        </div>
+      </div>
+    </div>
 
-	html {
-		overflow: hidden;
-	}
+    <!-- Extras -->
+	<div class="mb-8 animate-fadeInUp">
+		
+		<!-- Título EXTRA con fondo difuminado -->
+		<div class="relative mb-6 md:mb-8">
+		     <h3 class="relative z-10 text-center text-4xl md:text-5xl text-white font-extrabold tracking-wide drop-shadow-[0_0_30px_rgba(100,200,255,0.8)]">EXTRA:</h3>
+		</div>
 
-	.main-container {
-		height: 100vh;
-		position: relative;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 2rem;
-	}
+		<!-- Tarjetas (sin fondo especial) -->
+		<div class="grid gap-4 md:gap-6">
+			<!-- 360° Photo Booth -->
+			<div class="relative overflow-hidden bg-gradient-to-br from-blue-900/40 to-blue-950/60 border border-blue-500/30 rounded-2xl md:rounded-3xl p-5 md:p-6 transition-all hover:border-blue-400/50 hover:scale-[1.02] shadow-xl">
+				<div class="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-5 text-center md:text-left">
+					<div class="flex-shrink-0 z-10">
+						<img src="/360-photo-booth.jpg" alt="360° Photo Booth" class="h-32 w-32 md:h-28 md:w-28 object-cover rounded-xl shadow-lg">
+					</div>
+					<div class="flex-1 z-10">
+						<h4 class="text-2xl md:text-3xl text-white mb-2 md:mb-3 font-bold">360°<br class="md:hidden"> Photo Booth</h4>
+						<p class="text-sm md:text-base text-gray-200 leading-relaxed">Un 360° Photo Booth girará alrededor tuyo creando videos espectaculares. Prepárate para brillar y llevar recuerdos únicos!</p>
+					</div>
+				</div>
+				<div class="absolute inset-0 opacity-20">
+					<div class="absolute top-2 right-4 text-white text-xs">✦</div>
+					<div class="absolute top-8 right-12 text-white text-[8px]">✦</div>
+					<div class="absolute bottom-4 right-8 text-white text-xs">✦</div>
+					<div class="absolute top-12 left-4 text-white text-[6px]">✦</div>
+				</div>
+			</div>
 
-	.event-content {
-		width: 100%;
-		max-width: 500px;
-		height: 100%;
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		text-align: center;
-		color: white;
-	}
+			<!-- Fotos Instantáneas -->
+			<div class="relative overflow-hidden bg-gradient-to-br from-blue-900/40 to-blue-950/60 border border-blue-500/30 rounded-2xl md:rounded-3xl p-5 md:p-6 transition-all hover:border-blue-400/50 hover:scale-[1.02] shadow-xl">
+				<div class="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-5 text-center md:text-left">
+					<div class="flex-shrink-0 z-10">
+						<img src="/fotos-instantaneas.jpg" alt="Fotos Instantáneas" class="h-32 w-32 md:h-28 md:w-28 object-cover rounded-xl shadow-lg">
+					</div>
+					<div class="flex-1 z-10">
+						<h4 class="text-2xl md:text-3xl text-white mb-2 md:mb-3 font-bold uppercase">Fotos<br class="md:hidden"> Instantáneas</h4>
+						<p class="text-sm md:text-base text-gray-200 leading-relaxed">Una cabina de fotos instantáneas para posar con tus amigos y llevarte un recuerdo físico único de la noche</p>
+					</div>
+					</div>
+					<div class="absolute inset-0 opacity-20">
+						<div class="absolute top-3 right-6 text-white text-xs">✦</div>
+						<div class="absolute top-10 right-14 text-white text-[8px]">✦</div>
+						<div class="absolute bottom-6 right-10 text-white text-xs">✦</div>
+						<div class="absolute top-14 left-6 text-white text-[6px]">✦</div>
+					</div>
+			</div>
 
+				<!-- Espectáculo de Fuegos Artificiales -->
+				<div class="relative overflow-hidden bg-gradient-to-br from-blue-900/40 to-blue-950/60 border border-blue-500/30 rounded-2xl md:rounded-3xl p-5 md:p-6 transition-all hover:border-blue-400/50 hover:scale-[1.02] shadow-xl">
+					<div class="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-5 text-center md:text-left">
+						<div class="flex-shrink-0 z-10">
+							<img src="/fuegos-artificiales.jpg" alt="Fuegos Artificiales" class="h-32 w-32 md:h-28 md:w-28 object-cover rounded-xl shadow-lg">
+						</div>
+						<div class="flex-1 z-10">
+							<h4 class="text-2xl md:text-3xl text-white mb-2 md:mb-3 font-bold uppercase">Espectáculo<br class="md:hidden"> de fuegos<br class="md:hidden"> artificiales</h4>
+							<p class="text-sm md:text-base text-gray-200 leading-relaxed">La noche se iluminará con fuegos artificiales que harán brillar cada momento y quedarán en la memoria de todos</p>
+						</div>
+					</div>
+					<div class="absolute inset-0 opacity-20">
+						<div class="absolute top-4 right-8 text-white text-xs">✦</div>
+						<div class="absolute top-12 right-16 text-white text-[8px]">✦</div>
+						<div class="absolute bottom-8 right-12 text-white text-xs">✦</div>
+						<div class="absolute top-16 left-8 text-white text-[6px]">✦</div>
+					</div>
+				</div>
+		</div>	
+	</div>
 
+    <!-- Botón de registro -->
+    <button id="registerBtn" 
+            class="w-full bg-gradient-to-br from-yellow-500 to-orange-500 rounded-full py-5 px-8 cursor-pointer transition-all shadow-[0_10px_40px_rgba(255,215,0,0.4)] mb-5 hover:-translate-y-1 hover:shadow-[0_15px_50px_rgba(255,215,0,0.6)] active:translate-y-0 animate-fadeInUp animate-pulse">
+      <span class="block text-xl font-black text-black tracking-wide mb-1">REGÍSTRATE AQUÍ</span>
+      <span class="block text-sm font-semibold text-black/80">Genera tu QR de ingreso</span>
+    </button>
 
-	.center-content {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		padding: 0.5rem 0;
-	}
+    <!-- Aviso importante -->
+    <div class="bg-orange-500/10 border-2 border-orange-500/30 rounded-2xl p-4 text-center animate-fadeInUp">
+      <p class="text-sm leading-relaxed">
+        ⚠️ <strong class="text-yellow-500">¡No faltes, que esta fiesta es para ti!</strong>
+      </p>
+      <p class="text-sm text-gray-300 mt-2">
+        El ingreso será estrictamente controlado. Asegúrate de llegar a tiempo para vivir la experiencia completa sin contratiempos.
+      </p>
+    </div>
+  </main>
 
-	.main-title {
-		font-size: 3.5rem;
-		font-weight: 900;
-		line-height: 0.9;
-		margin-bottom: 1.5rem;
-		text-shadow: 0 4px 8px rgba(0,0,0,0.5);
-		letter-spacing: -0.02em;
-	}
+  <!-- Animaciones personalizadas -->
+  <style>
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeInDown { animation: fadeInDown 0.8s ease; }
+    .animate-fadeInUp { animation: fadeInUp 0.8s ease 0.2s both; }
 
-	.subtitle-section {
-		margin-bottom: 2rem;
-	}
+    /* Ajustes responsive */
+    @media (max-width: 480px) {
+      .max-w-\[500px\] { max-width: 380px; }
+      .h-\[380px\] { height: 350px; }
+      .left-\[15\%\] { left: 12%; }
+      .right-\[15\%\] { right: 12%; }
+      .w-\[140px\] { width: 110px; }
+      .w-\[200px\] { width: 150px; }
+      .top-\[80px\] { top: 60px; }
+      .-mt-\[320px\] { margin-top: -300px; }
+      .grid-cols-3 { grid-template-columns: 1fr; }
+    }
+  </style>
 
-	.anniversary-text {
-		font-size: 1.5rem;
-		font-weight: 500;
-		margin-bottom: 0.5rem;
-		opacity: 0.95;
-	}
-
-	.midas-logo-center {
-		display: flex;
-		justify-content: center;
-		margin-bottom: 1.5rem;
-	}
-
-	.midas-logo-main {
-		height: 50px;
-		width: auto;
-		filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
-	}
-
-	.solutions-text {
-		font-size: 0.9rem;
-		font-weight: 600;
-		letter-spacing: 0.2em;
-		background: linear-gradient(45deg, #FFD700, #FFA500);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		margin-top: -0.5rem;
-	}
-
-	.date-section {
-		margin-bottom: 2rem;
-	}
-
-	.date-text {
-		font-size: 2.5rem;
-		font-weight: 900;
-		background: linear-gradient(45deg, #FFD700, #FFA500);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-		letter-spacing: 0.05em;
-	}
-
-	.register-btn {
-		background: linear-gradient(45deg, #FFD700, #FFA500);
-		color: #000;
-		border: none;
-		padding: 1rem 2.5rem;
-		border-radius: 50px;
-		font-size: 1.2rem;
-		font-weight: 700;
-		cursor: pointer;
-		transition: all 0.3s ease;
-		margin-bottom: 1.5rem;
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-		box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
-	}
-
-	.register-btn:hover {
-		transform: translateY(-3px);
-		box-shadow: 0 12px 35px rgba(255, 215, 0, 0.6);
-		background: linear-gradient(45deg, #FFA500, #FFD700);
-	}
-
-	.register-btn:active {
-		transform: translateY(-1px);
-	}
-
-	.info-section {
-		margin-bottom: 1rem;
-	}
-
-	.info-text {
-		font-size: 0.9rem;
-		font-weight: 400;
-		opacity: 0.9;
-		line-height: 1.4;
-	}
-
-	.artist-section {
-		text-align: center;
-		margin-bottom: 1rem;
-	}
-
-	.artist-label {
-		font-size: 0.9rem;
-		font-weight: 500;
-		margin-bottom: 0.5rem;
-		opacity: 0.9;
-	}
-
-	.artist-logo {
-		display: flex;
-		justify-content: center;
-	}
-
-	.dj-logo {
-		height: 80px;
-		width: auto;
-	}
-
-	/* Responsive */
-	@media (max-width: 768px) {
-		.main-container {
-			padding: 1rem;
-		}
-
-		.main-title {
-			font-size: 2.8rem;
-		}
-
-		.midas-text {
-			font-size: 2.2rem;
-		}
-
-		.date-text {
-			font-size: 2rem;
-		}
-
-		.register-btn {
-			padding: 0.8rem 2rem;
-			font-size: 1rem;
-		}
-
-		.midas-logo {
-			height: 60px;
-		}
-
-		.midas-logo-main {
-			height: 35px;
-			margin-top: 20px;
-		}
-
-		.dj-logo {
-			height: 70px;
-		}
-
-		.info-text {
-			font-size: 0.8rem;
-		}
-	}
-
-	@media (max-width: 480px) {
-		.main-title {
-			width: 5px;
-			height: auto;
-		}
-
-		.midas-text {
-			font-size: 1.8rem;
-		}
-
-		.date-text {
-			font-size: 1.6rem;
-		}
-
-		.register-btn {
-			padding: 0.7rem 1.5rem;
-			font-size: 0.9rem;
-		}
-	}
-</style>
-
-<script>
-	document.addEventListener('DOMContentLoaded', function() {
-		const registerButton = document.getElementById('register-button');
-		if (registerButton) {
-			registerButton.addEventListener('click', function() {
-				window.location.href = '/registro';
-			});
-		}
-	});
-</script>
+  <script>
+    const registerBtn = document.getElementById('registerBtn');
+    if (registerBtn) {
+      registerBtn.addEventListener('click', () => {
+        window.location.href = '/registro';
+      });
+    }
+  </script>
+</Layout>
