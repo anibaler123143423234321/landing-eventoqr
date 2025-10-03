@@ -1,10 +1,10 @@
 ---
 // Página principal del evento - Landing page con diseño del flyer
-import fondo2 from '../assets/fondo2.png';
 import recurso1 from '../assets/recurso1.png';
 import logotipo from '../assets/Logotipo.png';
 import djGian from '../assets/dj gian.png';
 import djGianLogo from '../assets/dj gian logo.png';
+import fondo1 from '../assets/GRUNGE.png';
 import '../styles/global.css';
 ---
 
@@ -19,8 +19,14 @@ import '../styles/global.css';
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<link rel="preload" as="image" href={recurso1.src} />
+	<link rel="preload" as="image" href={logotipo.src} />
+	<link rel="preload" as="image" href={djGian.src} />
+	<link rel="preload" as="image" href={djGianLogo.src} />
+	<link rel="preload" as="image" href={fondo1.src} />
+
 </head>
-<body style={`background-color: #060f24`}>
+<body style={`background: #060f24 url(${fondo1.src}) no-repeat center center fixed; background-size: cover;`}>
 	<main class="main-container">
 		<!-- Contenido principal del evento -->
 		<div class="event-content">
@@ -321,7 +327,7 @@ import '../styles/global.css';
 		}
 
 		.midas-logo-main {
-			height: 90px;
+			height: 80px;
 		}
 
 		.dj-logo {

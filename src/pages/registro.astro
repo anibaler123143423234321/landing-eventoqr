@@ -1,8 +1,8 @@
 ---
 // Esta es la página del formulario de registro (movida desde index.astro)
 import logotipo from '../assets/Logotipo.png';
-import recurso1 from '../assets/recurso1.png';
 import djGianLogo from '../assets/dj gian logo.png';
+import fondo1 from '../assets/GRUNGE.png';
 ---
 
 <!DOCTYPE html>
@@ -16,8 +16,13 @@ import djGianLogo from '../assets/dj gian logo.png';
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;909&display=swap" rel="stylesheet">
+	<link rel="preload" as="image" href={logotipo.src} />
+	<link rel="preload" as="image" href={djGianLogo.src} />
+	<link rel="preload" as="image" href={fondo1.src} />
+
 </head>
-<body style="background-color: #060f24">
+<body style={`background: #060f24 url(${fondo1.src}) no-repeat center center fixed; background-size: cover;`}>
+
 	<main class="main-container">
 
 		<!-- Contenido principal del evento -->
@@ -25,10 +30,7 @@ import djGianLogo from '../assets/dj gian logo.png';
 			<!-- Contenido central -->
 			<div class="center-content">
 				<div class="midas-logo-center">
-					<img src={logotipo.src} alt="MIDAS Logo" class="midas-logo-main">
-				</div>
-				<div>
-					<img src={recurso1.src} alt="Recurso 1" style="max-width: 250px; height: auto;" />
+					<img src={logotipo.src} alt="MIDAS Logo" class="midas-logo-main" style="margin-top: 2rem;">
 				</div>
 				<h2 class="reserva-title">REGISTRA TUS DATOS AQUÍ</h2>
 
@@ -159,15 +161,15 @@ import djGianLogo from '../assets/dj gian logo.png';
 	}
 
 	.midas-logo-main {
-		height: 80px;
+		height: 70px;
 		width: auto;
 		filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
 	}
 
 	.reserva-title {
-		font-size: 1.5rem;
+		font-size: 1.2rem;
 		font-weight: 800;
-		color: #FFD700;
+		color: #ffffff;
 		margin-bottom: 1.2rem;
 		text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 		letter-spacing: 0.05em;
@@ -370,7 +372,7 @@ import djGianLogo from '../assets/dj gian logo.png';
 		}
 
 		.midas-logo-main {
-			height: 60px;
+			height: 50px;
 		}
 
 		.qr-form {
